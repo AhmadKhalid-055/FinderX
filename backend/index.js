@@ -19,10 +19,7 @@ app.use('/api/items', require('./routes/itemRoutes'));
 app.use('/api/messages', require('./routes/messageRoutes'));
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}).then(() => {
+mongoose.connect(process.env.MONGO_URI).then(() => {
     console.log('MongoDB Connected');
 }).catch(err => {
     console.error('MongoDB Connection Error:', err);
